@@ -6,7 +6,7 @@
 
 ### Git Clone
 ```
-# git clone https://github.com/Koozzi/<Repo_Name>
+# git clone https://github.com/Koozzi/Tomato.git
 ```
 
 ### Installations
