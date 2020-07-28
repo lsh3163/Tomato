@@ -22,6 +22,10 @@ Tomato/client # npm i bootstrap
 Tomato/client # npm i reactstrap
 Tomato/client # npm i @remotemonster/sdk
 Tomato/client # npm i react-router-dom
+Tomato/client # npm i react-helmet
+Tomato/client # npm i react-script-tag
+Tomato/client # npm i @material-ui/icons
+Tomato/client # npm i @material-ui/core
 ```
 
 ### Start
