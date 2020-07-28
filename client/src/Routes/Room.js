@@ -4,7 +4,6 @@ import ScriptTag from 'react-script-tag';
 export default class Room extends Component {
     render() {
         return (
-            <>
             <div id="content">
                 <div>
                     <h6>
@@ -41,7 +40,6 @@ export default class Room extends Component {
                 <ScriptTag type="text/javascript" src="https://cdn.jsdelivr.net/npm/@remotemonster/sdk"></ScriptTag>
                 <ScriptTag type="text/javascript" src="./Conference.js"></ScriptTag>
             </div>
-            </>  
         )
     }
 }
