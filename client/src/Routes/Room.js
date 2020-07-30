@@ -23,15 +23,15 @@ const Room = () => {
         </h6>
         <video
             id="myVideo"
-            class="remote-video center w-300 h-300"
-            autoplay
+            className="remote-video center w-300 h-300"
+            autoPlay
             muted
             controls
-            playsinline
+            playsInline
         ></video>
         <h6
             id="waitingTv"
-            class="m-0 font-weight-bold text-primary"
+            className="m-0 font-weight-bold text-primary"
         >waiting</h6>
         <div>
             <div>

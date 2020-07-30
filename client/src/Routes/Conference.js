@@ -37,11 +37,11 @@ const initConference = () => {
   };
 
   const videoAttrs = {
-    class : "remote-video center w-320 h-240",
-    autoplay : true,
+    className : "remote-video center w-320 h-240",
+    autoPlay : true,
     muted : true,
     controls: true,
-    playsinline: true,
+    playsInine: true,
     style :"z-index:1;background: rgba(0, 0, 0, 0.5); width: 300px;"
   }
 
