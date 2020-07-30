@@ -19,31 +19,31 @@ const initConference = () => {
       serviceId: serviceId,
       wsurl : "wss://signal.remotemonster.com/ws",
       resturl : "https://signal.remotemonster.com/rest",
-  },
+    },
     view: {
       //remote: "#remoteVideo",
       local: "#myVideo"
     },
     media: {
-        video: {
-            width: { min: 320, max: 640 },
-            height: { min: 240, max: 480 },
-            frameRate: { min: 8, max: 30 },
-            maxBandwidth: 500,
-            codec: 'H264'
-        },
-        audio: true
+      video: {
+        width: { min: 320, max: 640 },
+        height: { min: 240, max: 480 },
+        frameRate: { min: 8, max: 30 },
+        maxBandwidth: 500,
+        codec: 'H264'
+      },
+      audio: true
     }
   };
 
   const videoAttrs = {
-                  class : "remote-video center w-320 h-240",
-                  autoplay : true,
-                  muted : true,
-                  controls: true,
-                  playsinline: true,
-                  style :"z-index:1;background: rgba(0, 0, 0, 0.5); width: 300px;"
-                }
+    class : "remote-video center w-320 h-240",
+    autoplay : true,
+    muted : true,
+    controls: true,
+    playsinline: true,
+    style :"z-index:1;background: rgba(0, 0, 0, 0.5); width: 300px;"
+  }
 
   const listener = {
     onConnect(chid) {

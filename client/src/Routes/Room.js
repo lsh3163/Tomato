@@ -1,5 +1,4 @@
 import React, { Component, useLayoutEffect } from 'react';
-import ScriptTag from 'react-script-tag';
 import Remon from "@remotemonster/sdk";
 import initConference from './Conference';
 
