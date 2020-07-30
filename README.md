@@ -44,6 +44,7 @@ react-script-tag
 ## 개발일지
 
 2020.07.30
+
 우선 RemoteMonster에서 제공하는 기본 코드를 React에 적용했다. Local에서 하나는 기본 Chrome으로 접속했고, 하나는 Chrome 시크릿 모드로 접속을 했다. 서로 화면이 잘 나왔다.
 
 그리고 기본 Chrome과 시크릿 Chrome으로 localhost:3000으로 접속한 상태에서 이 코드를 그대로 AWS EC2 인스턴스에 올리고 필요한 Module들을 설치하고 서버를 실행했다. 
