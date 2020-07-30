@@ -9,8 +9,8 @@ const initConference = () => {
   let remon;
   let remonRoom=[];
 
-  const key = "9bb010b1f401295f6d4edd4767cb3f4d5bb686194371aab9c05e1137cceca5b1";
-  const serviceId = "38f18ba5d69ea76fb443a57ee1c0dfb8a75e423e6f24f7e94925867c8e6bae96";
+  const key = "1234567890";
+  const serviceId = "SERVICEID1";
 
   // please register your own service key from remotemonster site.
   let config = {
