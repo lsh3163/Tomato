@@ -39,7 +39,7 @@ react-script-tag
 
 ## Resources
 
-* [RemoteMonster](https://remotemonster.com/)
+[RemoteMonster](https://remotemonster.com/)
 
 ## Development Log
 
