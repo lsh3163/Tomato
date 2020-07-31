@@ -40,3 +40,7 @@ react-script-tag
 ## Resources
 
 * [RemoteMonster](https://remotemonster.com/)
+
+## Development Log
+
+[Koozzi's Velog](https://velog.io/@koozzi/series/Software-Maestro)
