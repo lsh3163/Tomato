@@ -9,6 +9,15 @@
 # git clone https://github.com/Koozzi/Tomato.git
 ```
 
+### Version
+```
+Tomato % node -v                   
+v14.5.0
+
+Tomato % npm -v
+6.14.5
+```
+
 ### Installations
 
 ```
