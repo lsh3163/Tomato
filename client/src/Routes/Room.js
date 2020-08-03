@@ -1,6 +1,7 @@
 import React, { Component, useLayoutEffect } from 'react';
-import initConference from './Conference';
-import initTimer from './Timer'
+import initConference from '../script/Conference';
+import initTimer from '../script/Timer';
+
 const Room = () => {
 
     useLayoutEffect(() => {
@@ -46,6 +47,7 @@ const Room = () => {
                 </div>
             </div>
             <canvas id="myChart" width="400" height="400">Canvas</canvas>
+        </div>
         </div>
     )
 };

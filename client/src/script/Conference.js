@@ -106,17 +106,22 @@ const initConference = () => {
         delete remonRoom[id];
       })
       remon.close()
-    } else { // 방에 참여하고 있지 않을 때
+    } 
+    else { // 방에 참여하고 있지 않을 때
       isConnected = true;
-      document.querySelector('#enterBtn').innerHTML = "leave";
-      remon = new Remon({ config, listener });
-      await remon.createRoom("remon")
-      let participants = await remon.fetchRooms("remon"); 
+      document.querySelector('#enterBtn').innerHTML = "leave"; // 들어왔으니까 Leave로 변경
+      remon = new Remon({ config, listener }); // create Remon object with config object and listener object.
+      await remon.createRoom("remon") // Create a conference call room with a room id.
+      let participants = await remon.fetchRooms("remon"); // 방의 참여자 목록 조희, 참여자 목록을 담은 배열을 리턴함
+      // console.log(participants, "------------------");
       participants.forEach(async function(participant){
         if(!remonRoom[participant.id]){
           remonRoom[participant.id] = true;
-          let newVideo = document.createElement('video');
+          let newVideo = document.createElement('video'); // 내가 참여하면 다른 사람의 비디오를 생성하고 재생.
+          // console.log(participant.id)
+          // console.log("What is videoAttrs's id ??", videoAttrs.id);
           videoAttrs.id =  participant.id.replace(":","-");
+          // console.log("What is videoAttrs's id ??", videoAttrs.id);
           Object.keys(videoAttrs).forEach(key => newVideo.setAttribute(key, videoAttrs[key]))
           config.view.remote = `#${newVideo.id}`
           newVideo.remon = new Remon({ config })

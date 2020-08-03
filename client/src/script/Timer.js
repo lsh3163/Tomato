@@ -55,5 +55,3 @@ const initTimer = () => {
     );
 }
 export default initTimer;
-
-

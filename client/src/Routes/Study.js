@@ -8,6 +8,9 @@ export default class Study extends Component {
                     <li>
                         <a href="/room">Create Room</a>
                     </li>
+                    <li>
+                        <a href="/joinroom">Join Room</a>
+                    </li>
                 </ui>
             </div>
         )
