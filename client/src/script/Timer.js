@@ -1,13 +1,10 @@
-import * as React from "react";
-import { useHistory } from 'react-router-dom';
-import Result from '../Routes/Result';
-
 const initTimer = () => {
     const enterBtn = document.querySelector("#enterBtn");
     let timer = document.getElementById('timer');
     var seconds = 0;
     var minutes = 0;
     let isConnected = 0;
+
     async function timerstart(){
         var contador = null;
         console.log(isConnected);
@@ -20,18 +17,22 @@ const initTimer = () => {
                 //inference();
                 return;
             }
+
             if(enterBtn.innerHTML === "Enter"){
                 timer.innerHTML = "It's Timer";
                 window.clearInterval(contador);
                 return;
             }
+
             if(minutes>=1){
                 seconds = 0;
                 minutes = 0;
                 timer.innerHTML = "It's Timer!";
                 window.clearInterval(contador);
+                window.location = '/result';
                 return;
             }
+
             printTimer(minutes, seconds);
             seconds++;
                 
