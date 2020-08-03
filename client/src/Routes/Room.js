@@ -1,14 +1,17 @@
 import React, { Component, useLayoutEffect } from 'react';
 import initConference from './Conference';
-
+import initTimer from './Timer'
 const Room = () => {
 
     useLayoutEffect(() => {
       initConference();
+      initTimer();
     }, []);
 
     return (
         <div id="content">
+        <h3 id="timer">It's Timer</h3>
+        <div>
             <h1 id="timer"></h1>
             <h6 id="console">Console</h6>
             <h6 id="facecnt">Facent</h6>
