@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as tf from '@tensorflow/tfjs';
-// Note: Require the cpu and webgl backend and add them to package.json as peer dependencies.
+
 const initJavis = () => {
     const enterBtn = document.querySelector("#enterBtn");
     const webcamElement = document.getElementById('myVideo');
@@ -11,6 +11,7 @@ const initJavis = () => {
     var time = 0;
     var data = new Array;
     var times = new Array;
+    var Chart = require('chart.js');
     async function inferencestart(){
         var contador = null;
         seconds = 1;
@@ -64,6 +65,26 @@ const initJavis = () => {
             }
         }
         document.getElementById("facenum").innerText = face_cnt;
+        var ctx = document.getElementById('myChart').getContext('2d');
+        var chart = new Chart(ctx, {
+            // The type of chart we want to create
+            type: 'line',
+
+            // The data for our dataset
+            data: {
+                labels: times,
+                datasets: [{
+                    label: 'My First dataset',
+                    backgroundColor: 'rgb(255, 99, 132)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    data: data
+                }]
+            },
+
+            // Configuration options go here
+            options: {}
+        });
+
     }
     enterBtn.addEventListener("click",
         evt => {

@@ -1,8 +1,8 @@
 import React, { Component, useLayoutEffect } from 'react';
-import Remon from "@remotemonster/sdk";
-import initConference from './Conference';
-import initTimer from './Timer'
-import initJavis from './Report'
+import initConference from '../script/Conference';
+import initTimer from '../script/Timer';
+import initJavis from '../script/Report'
+
 const Room = () => {
 
     useLayoutEffect(() => {
@@ -16,6 +16,7 @@ const Room = () => {
         <h3 id="timer">It's Timer</h3>
         <h3 id="console">It's Class</h3>
         <h3 id="facenum">It's Score</h3>
+        <canvas id="myChart" width="100" height="100"></canvas>
         <div>
             <h6>
             Other Videos

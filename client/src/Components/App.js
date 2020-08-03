@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import Router from './Router';
-import Header from './Header';
 
 function App() {
   return (
     <div className="App">
-      <Header />
       <Router />
     </div>
   );

@@ -1,4 +1,7 @@
 import * as React from "react";
+import { useHistory } from 'react-router-dom';
+import Result from '../Routes/Result';
+
 const initTimer = () => {
     const enterBtn = document.querySelector("#enterBtn");
     let timer = document.getElementById('timer');
