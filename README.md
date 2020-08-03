@@ -39,6 +39,10 @@ react-helmet
 react-script-tag
 @material-ui/icons
 @material-ui/core
+@tensorflow-models/posenet
+@tensorflow-models/coco-ssd
+@tensorflow/tfjs
+chart.js
 ```
 
 ### Start

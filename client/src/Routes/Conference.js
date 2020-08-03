@@ -4,7 +4,6 @@ const initConference = () => {
   const enterBtn = document.querySelector("#enterBtn");
   const otherVideos= document.getElementById('otherVideos');
 
-
   let isConnected = false;
   let remon;
   let remonRoom=[];
@@ -21,7 +20,7 @@ const initConference = () => {
       resturl : "https://signal.remotemonster.com/rest",
     },
     view: {
-      //remote: "#remoteVideo",
+      remote: "#remoteVideo",
       local: "#myVideo"
     },
     media: {
@@ -35,7 +34,6 @@ const initConference = () => {
       audio: true
     }
   };
-
   const videoAttrs = {
     className : "remote-video center w-320 h-240",
     autoPlay : true,
@@ -44,7 +42,6 @@ const initConference = () => {
     playsInine: true,
     style :"z-index:1;background: rgba(0, 0, 0, 0.5); width: 300px;"
   }
-
   const listener = {
     onConnect(chid) {
       console.log(`remon.listener.onConnect ${chid} at listener`);
@@ -95,11 +92,8 @@ const initConference = () => {
       console.log(`EVENT FIRED: onRoomEvent: ${JSON.stringify(result)}`)
     }
   };
-
-
-
   async function start() {
-    if (isConnected) {
+    if (isConnected) { // 방에 참여하고 있을 때 
       isConnected = false;
       document.querySelector('#enterBtn').innerHTML = "Enter";
       Object.keys(remonRoom).forEach(function(id){
@@ -112,27 +106,27 @@ const initConference = () => {
         delete remonRoom[id];
       })
       remon.close()
-    } else {
+    } else { // 방에 참여하고 있지 않을 때
       isConnected = true;
       document.querySelector('#enterBtn').innerHTML = "leave";
       remon = new Remon({ config, listener });
       await remon.createRoom("remon")
-      let participants = await remon.fetchRooms("remon");
+      let participants = await remon.fetchRooms("remon"); 
       participants.forEach(async function(participant){
         if(!remonRoom[participant.id]){
-                remonRoom[participant.id] = true;
-                  let newVideo = document.createElement('video');
-                  videoAttrs.id =  participant.id.replace(":","-");
-                  Object.keys(videoAttrs).forEach(key => newVideo.setAttribute(key, videoAttrs[key]))
-                  config.view.remote = `#${newVideo.id}`
-                  newVideo.remon = new Remon({ config })
-                  otherVideos.appendChild(newVideo)
-                  await newVideo.remon.joinCast(newVideo.id.replace("-",":"));
-              }
+          remonRoom[participant.id] = true;
+          let newVideo = document.createElement('video');
+          videoAttrs.id =  participant.id.replace(":","-");
+          Object.keys(videoAttrs).forEach(key => newVideo.setAttribute(key, videoAttrs[key]))
+          config.view.remote = `#${newVideo.id}`
+          newVideo.remon = new Remon({ config })
+          otherVideos.appendChild(newVideo)
+          await newVideo.remon.joinCast(newVideo.id.replace("-",":"));
+        }
       })
-
     }
   }
+
   enterBtn.addEventListener("click",
     evt => {
       start();
@@ -140,11 +134,6 @@ const initConference = () => {
     },
     false
   );
-  
 }
 
 export default initConference;
-
-
-
-
