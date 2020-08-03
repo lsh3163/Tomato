@@ -3,11 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 
 export default () => (
     <div>
-        <ui>
-            <li><a href="/">Home</a></li>
-        </ui>
-        <ui>
-            <li><a href="/study">Study</a></li>
-        </ui>
+        <h1><Link to="/">Pomodoro</Link></h1>
+        <Link to="/study">Study</Link>
     </div>
 )

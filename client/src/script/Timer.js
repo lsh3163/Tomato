@@ -17,15 +17,15 @@ const initTimer = () => {
                 //inference();
                 return;
             }
-            if(enterBtn.innerHTML=="Enter"){
+            if(enterBtn.innerHTML === "Enter"){
                 timer.innerHTML = "It's Timer";
                 window.clearInterval(contador);
                 return;
             }
-            if(minutes>=2){
+            if(minutes>=1){
                 seconds = 0;
                 minutes = 0;
-                timer.innerHTML = "It's Timer";
+                timer.innerHTML = "It's Timer!";
                 window.clearInterval(contador);
                 return;
             }
@@ -34,6 +34,7 @@ const initTimer = () => {
                 
         }, 1000)
     }
+
     async function printTimer(minutes, seconds){
         
         var show_min = 24 - minutes;
@@ -46,6 +47,7 @@ const initTimer = () => {
         }
         timer.innerHTML = show_min+":"+show_sec;
     }
+
     enterBtn.addEventListener("click",
         evt => {
           timerstart();

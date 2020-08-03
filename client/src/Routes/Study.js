@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 export default class Study extends Component {
     render() {
@@ -6,10 +7,10 @@ export default class Study extends Component {
             <div>
                 <ui>
                     <li>
-                        <a href="/room">Create Room</a>
+                        <Link to="/room">Create Room</Link>
                     </li>
                     <li>
-                        <a href="/joinroom">Join Room</a>
+                        <Link to="/joinroom">Join Room</Link>
                     </li>
                 </ui>
             </div>
