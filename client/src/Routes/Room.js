@@ -1,15 +1,17 @@
 import React, { Component, useLayoutEffect } from 'react';
 import Remon from "@remotemonster/sdk";
 import initConference from './Conference';
-
+import initTimer from './Timer'
 const Room = () => {
 
     useLayoutEffect(() => {
       initConference();
+      initTimer();
     }, []);
 
     return (
         <div id="content">
+        <h3 id="timer">It's Timer</h3>
         <div>
             <h6>
             Other Videos
