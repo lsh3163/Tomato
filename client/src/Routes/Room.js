@@ -35,10 +35,10 @@ const Room = () => {
                 controls
                 playsInline
             ></video>
-            <h6
+            {/* <h6
                 id="waitingTv"
                 className="m-0 font-weight-bold text-primary"
-            >waiting</h6>
+            >waiting</h6> */}
             <div>
                 <div>
                     <span>

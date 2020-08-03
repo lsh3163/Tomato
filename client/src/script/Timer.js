@@ -1,4 +1,7 @@
 import * as React from "react";
+import { useHistory } from 'react-router-dom';
+import Result from '../Routes/Result';
+
 const initTimer = () => {
     const enterBtn = document.querySelector("#enterBtn");
     let timer = document.getElementById('timer');
@@ -36,7 +39,6 @@ const initTimer = () => {
     }
 
     async function printTimer(minutes, seconds){
-        
         var show_min = 24 - minutes;
         var show_sec = 60 - seconds;
         if(show_min<10){
