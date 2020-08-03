@@ -22,7 +22,7 @@ const initTimer = () => {
                 window.clearInterval(contador);
                 return;
             }
-            if(minutes>=2){
+            if(minutes>=25){
                 seconds = 0;
                 minutes = 0;
                 timer.innerHTML = "It's Timer";
@@ -37,7 +37,7 @@ const initTimer = () => {
     async function printTimer(minutes, seconds){
         
         var show_min = 24 - minutes;
-        var show_sec = 60 - seconds;
+        var show_sec = (60 - seconds) % 60;
         if(show_min<10){
             show_min = "0"+show_min;
         }
