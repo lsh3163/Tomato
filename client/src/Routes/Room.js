@@ -1,4 +1,4 @@
-import React, { Component, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 import initConference from '../script/Conference';
 import initTimer from '../script/Timer';
 import initJavis from '../script/Report'

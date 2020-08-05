@@ -16,13 +16,13 @@ const initJavis = () => {
         var contador = null;
         seconds = 1;
         contador = window.setInterval(function(){
-            if(seconds == 59){
+            if(seconds === 59){
                 seconds = 0;
                 minutes++;
                 inference();
                 return;
             }
-            if(enterBtn.innerHTML=="Enter"){
+            if(enterBtn.innerHTML==="Enter"){
                 window.clearInterval(contador);
                 return;
             }
@@ -44,14 +44,14 @@ const initJavis = () => {
         const webcam = await tf.data.webcam(webcamElement);
         const img = await webcam.capture();
         const prediction = await model.detect(img);
-        if(prediction.length==0){
+        if(prediction.length===0){
             data.push(0.1);
             times.push(time);
             document.getElementById("console").innerText = `None`;
         }
         else if(prediction.length > 0){
             face_cnt+=1;
-            if(prediction[0].class=="person"){
+            if(prediction[0].class==="person"){
                 data.push(prediction[0].score);
                 times.push(time);
                 document.getElementById("console").innerText = `
@@ -95,5 +95,3 @@ const initJavis = () => {
     );
 }
 export default initJavis;
-
-
