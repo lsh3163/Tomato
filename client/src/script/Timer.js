@@ -14,18 +14,17 @@ const initTimer = () => {
                 printTimer(minutes, seconds);
                 seconds = 0;
                 minutes++;
-                //inference();
                 return;
             }
             if(enterBtn.innerHTML === "Enter"){
-                timer.innerHTML = "It's Timer";
+                timer.innerHTML = "00:00";
                 window.clearInterval(contador);
                 return;
             }
             if(minutes>=25){
                 seconds = 0;
                 minutes = 0;
-                timer.innerHTML = "It's Timer";
+                timer.innerHTML = "00:00";
                 window.clearInterval(contador);
                 window.location = '/result';
                 return;

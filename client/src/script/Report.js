@@ -47,21 +47,19 @@ const initJavis = () => {
         if(prediction.length===0){
             data.push(0.1);
             times.push(time);
-            document.getElementById("console").innerText = `None`;
         }
         else if(prediction.length > 0){
             face_cnt+=1;
             if(prediction[0].class==="person"){
                 data.push(prediction[0].score);
                 times.push(time);
-                document.getElementById("console").innerText = `
+                /*document.getElementById("console").innerText = `
                 prediction: ${prediction[0].class}\n
-                probability: ${prediction[0].score}`;
+                probability: ${prediction[0].score}`;*/
             }
             else{
                 data.push(0.1);
                 times.push(time);
-                document.getElementById("console").innerText = `None`;
             }
         }
         document.getElementById("facenum").innerText = face_cnt;
@@ -74,7 +72,7 @@ const initJavis = () => {
             data: {
                 labels: times,
                 datasets: [{
-                    label: 'My First dataset',
+                    label: 'Your Pomodoro Score',
                     backgroundColor: 'rgb(255, 99, 132)',
                     borderColor: 'rgb(255, 99, 132)',
                     data: data
