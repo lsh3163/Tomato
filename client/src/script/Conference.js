@@ -25,8 +25,8 @@ const initConference = () => {
     },
     media: {
       video: {
-        width: { min: 320, max: 640 },
-        height: { min: 240, max: 480 },
+        width: { min: 160, max: 320 },
+        height: { min: 120, max: 240 },
         frameRate: { min: 8, max: 30 },
         maxBandwidth: 500,
         codec: 'H264'
@@ -112,8 +112,8 @@ const initConference = () => {
       isConnected = true;
       document.querySelector('#enterBtn').innerHTML = "leave"; // 들어왔으니까 Leave로 변경
       remon = new Remon({ config, listener }); // create Remon object with config object and listener object.
-      await remon.createRoom("remon") // Create a conference call room with a room id.
-      let participants = await remon.fetchRooms("remon"); // 방의 참여자 목록 조희, 참여자 목록을 담은 배열을 리턴함
+      await remon.createRoom("remn") // Create a conference call room with a room id.
+      let participants = await remon.fetchRooms("remn"); // 방의 참여자 목록 조희, 참여자 목록을 담은 배열을 리턴함
       // console.log(participants, "------------------");
       participants.forEach(async function(participant){
         if(!remonRoom[participant.id]){
