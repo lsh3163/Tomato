@@ -92,6 +92,7 @@ const initConference = () => {
       console.log(`EVENT FIRED: onRoomEvent: ${JSON.stringify(result)}`)
     }
   };
+  
   async function start() {
     if (isConnected) { // 방에 참여하고 있을 때 
       isConnected = false;
