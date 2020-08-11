@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
@@ -11,7 +11,7 @@ import Container from '@material-ui/core/Container';
 import { Link, useHistory } from "react-router-dom";
 import { createMuiTheme } from '@material-ui/core/styles';
 import purple from '@material-ui/core/colors/purple';
-
+import UserContext from './UserContext';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,9 +35,20 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Board() {
-  const history = useHistory();
-  const login = () => history.push("/login");
+  const { userData, setUserData } = useContext(UserContext);
+  
   const classes = useStyles();
+  const history = useHistory();
+  
+  const register = () => history.push("/register");
+  const login = () => history.push("/login");
+  const logout = () => {
+    setUserData({
+        token: undefined,
+        user: undefined
+    })
+    localStorage.setItem("auth-token", "")
+  };
   return (
     <React.Fragment>
       <AppBar position="relative">
@@ -46,7 +57,14 @@ export default function Board() {
             <Typography variant="h6" color="inherit" noWrap component={Link} to={"/"}>
                 Pomodoro
             </Typography>
-            <button onClick={login}>LogIn</button>
+            {userData.user ?(
+                <button onClick={logout}>Log Out</button>
+            ) : (
+            <>
+                <button onClick={register}>Register</button>
+                <button onClick={login}>Log In</button>
+            </>
+            )}
         </Toolbar>
       </AppBar>
       <main>
