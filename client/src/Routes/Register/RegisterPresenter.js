@@ -1,4 +1,4 @@
-import React, {useState, useContext, createContext } from 'react';
+import React, {useState, useContext } from 'react';
 import {useHistory} from 'react-router-dom';
 import Axios from 'axios';
 import UserContext from '../../Components/UserContext';
@@ -23,12 +23,10 @@ export default function RegisterPresenter() {
                 "http://localhost:5050/users/register",
                 newUser
             ); // 생성
+            const loginUser = {email, password};
             const loginRes = await Axios.post(
                 "http://localhost:5050/users/login",
-                {
-                    email,
-                    password,
-                }
+                loginUser
             ); // 새로 생성하면 자동으로 로그인이 되게끔.
             setUserData({
                 token: loginRes.data.token,
@@ -38,13 +36,13 @@ export default function RegisterPresenter() {
             history.push("/");
         }
         catch(err){
-            // err.response.data.msg && setError(err.response.data.msg);
-            console.log(err.message);
+            err.response.data.msg && setError(err.response.data.msg);
         }
     };
     return (
         <div>
             <h2>Register</h2>
+            {error && <ErrorNotice message={error} clearError={() => setError(undefined)} />}
             <form onSubmit={submit}>
                 <label>Email</label>
                 <input
