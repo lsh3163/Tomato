@@ -31,17 +31,17 @@ export default () => {
                 "http://localhost:5050/users/tokenIsValid",
                 null,
                 {
-                    header: {
+                    headers: {
                         "x-auth-token": token
                     }
                 }
             );
-            console.log(tokenRes);
+            console.log(tokenRes.data);
             if(tokenRes.data){
                 const userRes = await Axios.get(
                     "http://localhost:5050/users/",
                     {
-                        header: {
+                        headers: {
                             "x-auth-token": token
                         }
                     }
