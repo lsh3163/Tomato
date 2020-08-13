@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useContext }from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,10 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import {useHistory} from 'react-router-dom';
+import Axios from 'axios';
+import UserContext from '../Components/UserContext';
+import ErrorNotice from '../Components/ErrorNotice';
 
 function Copyright() {
   return (
@@ -47,6 +51,32 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignIn() {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [error, setError] = useState();
+
+  const { setUserData } = useContext(UserContext);
+  const history = useHistory();
+  const RealSubmit = async(e) => {
+    e.preventDefault();
+    try{
+        const loginUser = {email, password};
+        const loginRes = await Axios.post(
+            "http://localhost:5050/users/login",
+            loginUser
+        );
+        setUserData({
+            token: loginRes.data.token,
+            user: loginRes.data.user,
+        });
+        localStorage.setItem("auth-token", loginRes.data.token);
+        history.push("/");
+    }
+    catch(err){
+        err.response.data.msg && setError(err.response.data.msg);
+    }
+  };
+
   const classes = useStyles();
 
   return (
@@ -59,7 +89,8 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        <form className={classes.form} noValidate>
+        {error && <ErrorNotice message={error} clearError={() => setError(undefined)} />}
+        <form className={classes.form} noValidate onClick={RealSubmit}>
           <TextField
             variant="outlined"
             margin="normal"
@@ -70,6 +101,8 @@ export default function SignIn() {
             name="email"
             autoComplete="email"
             autoFocus
+            type="email"
+            onChange={e => setEmail(e.target.value)}
           />
           <TextField
             variant="outlined"
@@ -81,13 +114,15 @@ export default function SignIn() {
             type="password"
             id="password"
             autoComplete="current-password"
+            type="password"
+            onChange={e => setPassword(e.target.value)}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
           <Button
-            type="submit"
+            type="RealSubmit"
             fullWidth
             variant="contained"
             color="primary"

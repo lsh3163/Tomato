@@ -26,6 +26,7 @@ export default () => {
                 localStorage.setItem("auth-token", "");
                 token = "";
             }
+            console.log(token);
             const tokenRes = await Axios.post(
                 "http://localhost:5050/users/tokenIsValid",
                 null,
@@ -35,9 +36,11 @@ export default () => {
                     }
                 }
             );
+            console.log(tokenRes);
             if(tokenRes.data){
                 const userRes = await Axios.get(
-                    "http://localhost:5050/users/",{
+                    "http://localhost:5050/users/",
+                    {
                         header: {
                             "x-auth-token": token
                         }
