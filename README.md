@@ -6,7 +6,8 @@
 
 
 
-![스크린샷 2020-08-23 오전 12 47 38](https://user-images.githubusercontent.com/46708207/90960107-551a1e80-e4da-11ea-91fe-75c69f69eae3.png)
+![스크린샷 2020-08-23 오전 12 49 45](https://user-images.githubusercontent.com/46708207/90960151-97dbf680-e4da-11ea-9f0a-c707ad73e917.png)
+
 
 
 
