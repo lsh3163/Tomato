@@ -69,4 +69,5 @@ Tomato/client # npm install
 * [Tensorflow coco-ssd](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)
 
 * [Tensorflow posenet](https://github.com/tensorflow/tfjs-models/tree/master/posenet)
+* [Core ML](https://developer.apple.com/documentation/coreml)
 * [RemoteMonster SDK](https://remotemonster.com/)
