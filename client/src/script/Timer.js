@@ -4,7 +4,7 @@ const initTimer = () => {
     var seconds = 0;
     var minutes = 0;
     let isConnected = 0;
-
+    var left_time = 5;
     async function timerstart(){
         var contador = null;
         console.log(isConnected);
@@ -21,22 +21,24 @@ const initTimer = () => {
                 window.clearInterval(contador);
                 return;
             }
-            if(minutes>=25){
+            else if(minutes>=left_time){
                 seconds = 0;
                 minutes = 0;
                 timer.innerHTML = "00:00";
+                
                 window.clearInterval(contador);
                 window.location = '/result';
                 return;
             }
-
-            printTimer(minutes, seconds);
+            else{
+                printTimer(minutes, seconds);
+            }
             seconds++;
-                
         }, 1000)
     }
     async function printTimer(minutes, seconds){
-        var show_min = 24 - minutes;
+        console.log(minutes, seconds);
+        var show_min = left_time - minutes - 1;
         var show_sec = (60 - seconds) % 60;
         if(show_min<10){
             show_min = "0"+show_min;

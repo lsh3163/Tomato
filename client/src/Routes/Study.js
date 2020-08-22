@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, TextField, Grid} from '@material-ui/core';
+import { Container, TextField, Grid, Paper} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
 
-const useStyles = makeStyles({
-    root: {
-      minWidth: 275,
-    },
-    bullet: {
-      display: 'inline-block',
-      margin: '0 2px',
-      transform: 'scale(0.8)',
+const useStyles = makeStyles((theme) => ({
+    root:{
+        
+        maxWidth: 345,
+        
     },
     title: {
       fontSize: 14,
@@ -24,7 +18,16 @@ const useStyles = makeStyles({
     pos: {
       marginBottom: 12,
     },
-  });
+    paper: {
+        padding: theme.spacing(2),
+        margin: 'auto',
+        maxWidth: 500,
+    },
+    card:{
+        maxWidth: 500,
+    }
+
+}));
 
 export default function SelectStudy() {
     const classes = useStyles();
@@ -32,52 +35,43 @@ export default function SelectStudy() {
 
     return (
         <Container maxwidth="sm">
-        <Grid>
-            <Grid>
-                <Card className={classes.root}>
-                    <CardContent>
-                        <Typography className={classes.title} color="textSecondary" gutterBottom>
-                        Create Room
-                        </Typography>
+            <Grid container spacing={5}>
+                <Grid item xs>
+                    <Paper elevation={3} className={classes.paper}>
                         <Typography variant="h5" component="h2">
-                            Pomodoro room
+                            Create room
                         </Typography>
                         <Typography className={classes.pos} color="textSecondary">
-                            apple
+                            Create your own room
                         </Typography>
                         <Typography variant="body2" component="p">                            
-                            Stay Hungry, stay foolish
+                            Stay Hungry, Stay Foolish
                         </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small" component={Link} to={"/room"}>CREATE ROOM</Button>
-                    </CardActions>
-                </Card>
-            </Grid>
-            <Grid>
-                <Card className={classes.root}>
-                    <CardContent>
-                        <Typography className={classes.title} color="textSecondary" gutterBottom>
+                        <Button size="small" component={Link} to={"/room"}>
+                            START
+                        </Button>
+                    </Paper>
+                </Grid>
+                <Grid item xs>
+                    <Paper elevation={3} className={classes.paper}>
+                        <Typography variant="h5" component="h2">
                             Join Room
                         </Typography>
-                        <Typography variant="h5" component="h2">
-                            Friend Room
-                        </Typography>
                         <Typography className={classes.pos} color="textSecondary">
-                            tomato
+                            Join your own Room
                         </Typography>
                         <Typography variant="body2" component="form">
                             <form noValidate autoComplete="off">
-                                <TextField id="outlined-basic" label="Room Number" variant="outlined" />
+                                <TextField id="roomNumber" label="Room Number" variant="outlined"/>
                             </form>
                         </Typography>
-                    </CardContent>
-                    <CardActions>
-                        <Button size="small" component={Link} to={"/joinroom"}>JOIN ROOM</Button>
-                    </CardActions>
-                </Card>
+                        <Button size="small" component={Link} to={"/room"}>
+                            START
+                        </Button>
+                    </Paper>
+                </Grid>
             </Grid>
-        </Grid>
         </Container>
+        
     );
 }
