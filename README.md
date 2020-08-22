@@ -1,13 +1,11 @@
-# SoMa Project - Tomato with RemoteMonster 
+# 🔥 SoMa Project - FocuStudy
 
-> Concentration Management Online Study With WebRTC([RemoteMonster](https://remotemonster.com/))
+> Focus Management Platform with AI and WebRTC 
+
+<img width="1194" alt="스크린샷 2020-08-22 오후 11 51 13" src="https://user-images.githubusercontent.com/46708207/90958968-70812b80-e4d2-11ea-8294-0fddd1c3e1ba.png">
+
 
 ## Quick Start
-
-### Git Clone
-```
-# git clone https://github.com/Koozzi/Tomato.git
-```
 
 ### Version
 ```
@@ -62,8 +60,7 @@ Tomato/client # npm install
 
 ## Resources
 
-[RemoteMonster](https://remotemonster.com/)
+* [Tensorflow coco-ssd](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)
 
-## Development Log
-
-[Koozzi's Velog](https://velog.io/@koozzi/series/Software-Maestro)
+* [Tensorflow posenet](https://github.com/tensorflow/tfjs-models/tree/master/posenet)
+* [RemoteMonster SDK](https://remotemonster.com/)

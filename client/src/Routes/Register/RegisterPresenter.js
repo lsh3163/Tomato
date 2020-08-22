@@ -49,6 +49,11 @@ export default function RegisterPresenter() {
                     type="email"
                     onChange={e => setEmail(e.target.value)}
                 />
+                <input type="submit" value="Send Verify Code" />
+                <label>Verify Code</label>
+                <input
+                    type="text"
+                />
                 <label>Password</label>
                 <input
                     type="password"

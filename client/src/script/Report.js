@@ -53,9 +53,6 @@ const initJavis = () => {
             if(prediction[0].class==="person"){
                 data.push(prediction[0].score);
                 times.push(time);
-                /*document.getElementById("console").innerText = `
-                prediction: ${prediction[0].class}\n
-                probability: ${prediction[0].score}`;*/
             }
             else{
                 data.push(0.1);
@@ -65,10 +62,7 @@ const initJavis = () => {
         document.getElementById("facenum").innerText = face_cnt;
         var ctx = document.getElementById('myChart').getContext('2d');
         var chart = new Chart(ctx, {
-            // The type of chart we want to create
             type: 'line',
-
-            // The data for our dataset
             data: {
                 labels: times,
                 datasets: [{
@@ -78,8 +72,6 @@ const initJavis = () => {
                     data: data
                 }]
             },
-
-            // Configuration options go here
             options: {}
         });
 
