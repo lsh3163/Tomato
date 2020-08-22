@@ -6,10 +6,11 @@
 
 
 
-<img width="1194" alt="스크린샷 2020-08-22 오후 11 51 13" src="https://user-images.githubusercontent.com/46708207/90958968-70812b80-e4d2-11ea-8294-0fddd1c3e1ba.png">
+![스크린샷 2020-08-23 오전 12 47 38](https://user-images.githubusercontent.com/46708207/90960107-551a1e80-e4da-11ea-91fe-75c69f69eae3.png)
 
 
-## Quick Start
+
+## ✔️ Quick Start
 
 ### Version
 ```
@@ -62,7 +63,7 @@ Tomato/client # npm install
 # npm run dev
 ```
 
-## Resources
+## ✔️ Resources
 
 * [Tensorflow coco-ssd](https://github.com/tensorflow/tfjs-models/tree/master/coco-ssd)
 
