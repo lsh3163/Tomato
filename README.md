@@ -8,7 +8,9 @@
 
 ![스크린샷 2020-08-23 오전 12 49 45](https://user-images.githubusercontent.com/46708207/90960151-97dbf680-e4da-11ea-9f0a-c707ad73e917.png)
 
-
+## ✔️ Prototype Demo웹 제작
+주요 기능 구현 후 사용자 평가를 위한 프로토타입
+![스크린샷 2020-08-23 오전 12 59 04](https://user-images.githubusercontent.com/46708207/90960325-e1791100-e4db-11ea-914d-2dc3ef4a75f9.png)
 
 
 ## ✔️ Quick Start
@@ -63,6 +65,8 @@ Tomato/client # npm install
 ```
 # npm run dev
 ```
+
+
 
 ## ✔️ Resources
 
