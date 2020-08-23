@@ -43,9 +43,11 @@ function Home() {
                 <TimelineContent>
                 <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                    Start Your Routine
+                     Show your concentration!
                     </Typography>
-                    <Typography>Because you need strength</Typography>
+                    <Typography>
+                        It provides a timer and ranking system using AI video recognition.
+                    </Typography>
                 </Paper>
                 </TimelineContent>
             </TimelineItem>
@@ -61,7 +63,9 @@ function Home() {
                     <Typography variant="h6" component="h1">
                     Do your best with our Timer
                     </Typography>
-                    <Typography>Because it&apos;s awesome!</Typography>
+                    <Typography>
+                        A short 25 minutes can change your 25 years.
+                    </Typography>
                 </Paper>
                 </TimelineContent>
             </TimelineItem>
@@ -80,9 +84,10 @@ function Home() {
                 <TimelineContent>
                 <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                    Take a rest
+                        When you're focused, take a short break
                     </Typography>
-                    <Typography>Because you need rest</Typography>
+                    <Typography>
+                        A brief break will give you a powerful leap forward.</Typography>
                 </Paper>
                 </TimelineContent>
             </TimelineItem>
@@ -95,9 +100,9 @@ function Home() {
                 <TimelineContent>
                 <Paper elevation={3} className={classes.paper}>
                     <Typography variant="h6" component="h1">
-                    Repeat
+                        Repeat
                     </Typography>
-                    <Typography>Because this is the life you love!</Typography>
+                    <Typography>Life should look long.</Typography>
                 </Paper>
                 </TimelineContent>
             </TimelineItem>

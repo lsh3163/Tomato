@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import CameraIcon from '@material-ui/icons/PhotoCamera';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -53,28 +54,30 @@ export default function Board() {
     <React.Fragment>
       <AppBar position="relative">
         <Toolbar>
-          <CameraIcon className={classes.icon} />
+          <AccessAlarmIcon className={classes.icon} />
             <Typography variant="h6" color="inherit" noWrap component={Link} to={"/"}>
-                Pomodoro
+                FocuStudy
             </Typography>
-            {userData.user ?(
-                <button onClick={logout}>Log Out</button>
-            ) : (
-            <>
-                <button onClick={register}>Register</button>
-                <button onClick={login}>Log In</button>
-            </>
-            )}
+            <Typography>
+              {userData.user ?(
+                  <button onClick={logout}>Log Out</button>
+              ) : (
+              <>
+                  <button onClick={register}>Register</button>
+                  <button onClick={login}>Log In</button>
+              </>
+              )}
+            </Typography>
         </Toolbar>
       </AppBar>
       <main>
         <div className={classes.heroContent}>
           <Container maxWidth="sm">
             <Typography component="h1" variant="h2" align="center" color="textPrimary" gutterBottom>
-                <div id="timer">Pomodoro</div>
+                <div id="timer">FocuStudy</div>
             </Typography>
             <Typography variant="h5" align="center" color="textSecondary" paragraph>
-              Our pomodoro Timer will make you happy!
+              세상에 없던 AI 집중력 타이머 
             </Typography>
             <div className={classes.heroButtons}>
               <Grid container spacing={2} justify="center">

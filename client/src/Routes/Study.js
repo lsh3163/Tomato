@@ -42,10 +42,10 @@ export default function SelectStudy() {
                             Create room
                         </Typography>
                         <Typography className={classes.pos} color="textSecondary">
-                            Create your own room
+                            Become a leader and focus together
                         </Typography>
                         <Typography variant="body2" component="p">                            
-                            Stay Hungry, Stay Foolish
+                            Leaders are sacrificed and sublime. -Navy seal-
                         </Typography>
                         <Button size="small" component={Link} to={"/room"}>
                             START
