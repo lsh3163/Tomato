@@ -55,19 +55,19 @@ export default function Board() {
       <AppBar position="relative">
         <Toolbar>
           <AccessAlarmIcon className={classes.icon} />
-            <Typography variant="h6" color="inherit" noWrap component={Link} to={"/"}>
+            <Button variant="h6" color="inherit" noWrap component={Link} to={"/"}>
                 FocuStudy
-            </Typography>
-            <Typography>
+            </Button>
+            <Container align='right'>
               {userData.user ?(
-                  <button onClick={logout}>Log Out</button>
+                  <Button onClick={logout} color="inherit">Log Out</Button>
               ) : (
               <>
-                  <button onClick={register}>Register</button>
-                  <button onClick={login}>Log In</button>
+                  <Button onClick={register} color="inherit">Register</Button>
+                  <Button onClick={login} color="inherit">Log In</Button>
               </>
               )}
-            </Typography>
+            </Container>
         </Toolbar>
       </AppBar>
       <main>
