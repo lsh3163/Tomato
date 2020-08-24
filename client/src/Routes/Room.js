@@ -33,8 +33,10 @@ const useStyles = makeStyles((theme) => ({
 }));
 const Room = () => {
     const classes = useStyles();
+    let roomId = "remon";
+    console.log(roomId);
     useLayoutEffect(() => {
-      initConference();
+      initConference(roomId);
       initTimer();
       initJavis();
     }, []);

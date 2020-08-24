@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 export default function SelectStudy() {
     const classes = useStyles();
     const bull = <span className={classes.bullet}>•</span>;
-
+    
     return (
         <Container maxwidth="sm">
             <Grid container spacing={5}>
@@ -62,12 +62,12 @@ export default function SelectStudy() {
                         </Typography>
                         <Typography variant="body2" component="form">
                             <form noValidate autoComplete="off">
-                                <TextField id="roomNumber" label="Room Number" variant="outlined"/>
+                                <TextField id="roomNumber" label="roomNumber" variant="outlined"/>
+                                <Button size="small" component={Link} to={"/room"}>
+                                    START
+                                </Button>
                             </form>
                         </Typography>
-                        <Button size="small" component={Link} to={"/room"}>
-                            START
-                        </Button>
                     </Paper>
                 </Grid>
             </Grid>
