@@ -1,0 +1,61 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+* {
+    box-sizing:border-box;
+}
+
+.startbutton {
+    cursor: pointer;
+    background-color: #A12003;;
+    padding: 5px 5px;
+    width: 60px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border:2px solid rgba(0, 0, 0, 0.2);
+    color: white;
+    text-transform: uppercase;
+    text-align:center;
+    font-weight: 800;
+    font-size: 6px;
+    font-family: "Nanum Gothic";
+    align-items: right;
+}
+
+.othervideos {
+    display: relative;
+    grid-template-columns: auto auto auto auto;
+}
+
+.timer{
+    display: inline-block;
+    margin: 0 auto;
+    width: 210px;
+    height: 210px;
+    margin-top: 25px;
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #A12003;
+    border-radius: 70%;
+    background-color: transparent;
+    font-size:32px;
+    color: #A12003;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }

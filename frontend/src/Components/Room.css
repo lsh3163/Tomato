@@ -1,0 +1,36 @@
+.rooms {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 50px;
+    padding-top: 70px;
+    width: 80%;
+}
+
+.rooms .room {
+    width: 45%;
+    background-color: white;
+    margin-bottom: 70px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    font-weight: 300;
+    padding: 20px;
+    border-radius: 10px;
+    color: #adaeb9;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+        0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);   
+}
+
+.rooms .room a {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+}
+.room .room__id {
+    margin: 0;
+    font-weight: 300;
+}
